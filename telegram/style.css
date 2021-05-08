@@ -1,0 +1,10 @@
+.img {
+  border-radius: 50%;
+  border: 2px solid rgb(0, 139, 139);
+  height: 80px;
+}
+
+.info {
+  color: white;
+  font-weight: bolder;
+}

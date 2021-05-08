@@ -1,0 +1,44 @@
+<!doctype html>
+
+<head>
+	<title>Feedback | ScamFinder</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="ScamFinder is a new and easier way to detect if a scammer is calling you, just enter the phone number and see if there's any reports from anyone of our VERY small community">
+	<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%237d6ee7%22></rect><path fill=%22%23fff%22 d=%22M25.84 72.41L25.84 72.41Q31.87 72.41 34.97 69.67Q38.08 66.92 38.08 62.60L38.08 62.60Q38.08 58.82 35.69 56.48Q33.31 54.14 28.18 52.61L28.18 52.61L20.35 50.27Q14.59 48.56 11.30 45.23Q8.02 41.90 8.02 36.23L8.02 36.23Q8.02 32.81 9.32 30.06Q10.63 27.32 13.06 25.43Q15.49 23.54 18.86 22.51Q22.24 21.47 26.47 21.47L26.47 21.47Q30.07 21.47 33.17 22.05Q36.28 22.64 38.57 23.68Q40.87 24.71 42.13 25.97Q43.39 27.23 43.39 28.58L43.39 28.58Q43.39 29.84 42.76 30.74Q42.13 31.64 41.14 32.18L41.14 32.18Q38.80 30.38 35.06 29.03Q31.33 27.68 26.74 27.68L26.74 27.68Q21.43 27.68 18.41 29.93Q15.40 32.18 15.40 36.23L15.40 36.23Q15.40 39.38 17.56 41.36Q19.72 43.34 24.76 44.78L24.76 44.78L30.25 46.40Q37.36 48.47 41.45 52.20Q45.55 55.94 45.55 62.60L45.55 62.60Q45.55 69.71 40.42 74.12Q35.29 78.53 25.84 78.53L25.84 78.53Q21.70 78.53 18.32 77.81Q14.95 77.09 12.56 75.92Q10.18 74.75 8.87 73.36Q7.57 71.96 7.57 70.61L7.57 70.61Q7.57 69.08 8.51 68.05Q9.46 67.01 10.72 66.56L10.72 66.56Q11.71 67.55 13.15 68.58Q14.59 69.62 16.48 70.47Q18.37 71.33 20.71 71.87Q23.05 72.41 25.84 72.41ZM61.75 22.64L91.63 22.64Q91.90 23.09 92.17 23.86Q92.44 24.62 92.44 25.52L92.44 25.52Q92.44 27.05 91.72 27.95Q91.00 28.85 89.65 28.85L89.65 28.85L65.17 28.85L65.17 47.57L88.47 47.57Q88.75 48.02 89.02 48.78Q89.28 49.55 89.28 50.45L89.28 50.45Q89.28 51.98 88.56 52.88Q87.84 53.78 86.50 53.78L86.50 53.78L65.17 53.78L65.17 77.27Q64.72 77.45 63.77 77.63Q62.83 77.81 61.84 77.81L61.84 77.81Q57.79 77.81 57.79 74.57L57.79 74.57L57.79 26.60Q57.79 24.80 58.87 23.72Q59.95 22.64 61.75 22.64L61.75 22.64Z%22></path></svg>" />
+	<meta name="theme-color" content="#FFA500">
+	<link href="./css/?folder=Home&file=style" rel="stylesheet" />
+	<link href="./css/?folder=Home/Feedback&file=style" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="/socket.io/socket.io.js">
+
+	</script>
+</head>
+
+<body>
+	<header class="header">
+		<img src="https://i.ibb.co/1T4rf3w/CC-20210406-195814.png" class="logo">
+		<input class="menu-btn" type="checkbox" id="menu-btn" />
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a class="active" href="/">Home</a></li>
+		<li><a href="/report">Report</a></li>
+		<li><a href="/scambaiters">Scambaiters
+		</a></li>
+	  <li><a href="/alexa">Alexa</a></li>
+    <li><a href="/feedback">Feedback</a></li>
+  </ul>
+</header>
+<div class="content">
+  <center>
+  <input type="text" class="message" id="message" placeholder="What's Your Feedback?">
+  <h3>by clicking the "Send Feedback 📩" button on this page, you agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a></h3>
+  <button class="sendbtn" id="sendbtn">Send Feedback 📩</button>
+  </center>
+</div>
+	<script src="/feedbackJS">
+
+	</script>
+</body>
+
+</html>
