@@ -1,0 +1,5 @@
+language = "nodejs"
+run = "node index"
+
+[packager]
+ignoredPackages=["https:"]

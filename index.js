@@ -4,7 +4,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const math = require('mathjs');
 const discord = require('./discord');
-//const TelegramBot = require('node-telegram-bot-api');
+const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
 let PORT = process.env.PORT;
 db = require('./database/mongo');
