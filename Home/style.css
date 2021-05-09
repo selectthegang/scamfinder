@@ -220,8 +220,8 @@ a {
 }
 
 .content a {
-  text-decoration: none;
-  color: aqua;
+  text-decoration: underline;
+  color: white;
 }
 
 .content a:hover {

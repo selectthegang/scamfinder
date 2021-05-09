@@ -6,10 +6,17 @@
   "start_url": "https://scamfinder.tk/",
   "display": "standalone",
   "theme_color": "#FFA500",
+  "background_color": "#FFA500",
   "icons": [
     {
       "src": "https://i.ibb.co/1T4rf3w/CC-20210406-195814.png",
       "sizes": "512x512"
+    },
+    {
+      "src": "https://i.ibb.co/3T9mbVg/maskable-icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

@@ -1,4 +1,4 @@
-/* Variables/Libraries */
+/* Variables */
 let socket = io();
 let search = document.getElementById('search');
 let number = document.getElementById('number');
