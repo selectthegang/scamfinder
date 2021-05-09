@@ -27,22 +27,16 @@ ul {
 	display: table;
 }
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  
   color: red;
   font-weight: bold;
-  opacity: 1; /* Firefox (nightmare) */
+  opacity: 1;
 }
 
 :-ms-input-placeholder {
-  /* IE10-11 (even bigger nightmare) */
-  
   color: red;
 }
 
 ::-ms-input-placeholder {
-  /* Microsoft Edge (better version of IE) */
-  
   color: red;
 }
 .message {

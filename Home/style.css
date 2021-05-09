@@ -86,7 +86,6 @@ a {
 
 .header .menu-icon {
   cursor: pointer;
-  display: inline-block;
   float: right;
   padding: 28px 20px;
   position: relative;
@@ -180,24 +179,20 @@ a {
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-
   color: red;
   font-weight: bold;
   opacity: 1;
-  /* Firefox (nightmare) */
+  text-align: center;
 }
 
 :-ms-input-placeholder {
-  /* IE10-11 (even bigger nightmare) */
-
   color: red;
+  text-align: center;
 }
 
 ::-ms-input-placeholder {
-  /* Microsoft Edge (better version of IE) */
-
   color: red;
+  text-align: center;
 }
 
 .btn {
@@ -228,5 +223,3 @@ a {
   color: red;
   text-decoration: underline;
 }
-
-/* oh my fucking god, i hate CSS */

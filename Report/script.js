@@ -4,7 +4,7 @@ let category = document.getElementById('type');
 let btn = document.getElementById('btn');
 let msg = document.getElementById('msg');
 
-btn.addEventListener('click', function() {
+btn.addEventListener('click', function () {
 	if (category.options[category.selectedIndex].text === 'Scam Category') {
 		msg.innerHTML = `<h3>you didn't specify the scam category</h3>`;
 	} else {

@@ -14,7 +14,7 @@ a {
 
 .header {
   background-color: #fff;
-  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
   position: fixed;
   width: 100%;
   z-index: 3;
@@ -59,7 +59,6 @@ a {
 
 .header .menu-icon {
   cursor: pointer;
-  display: inline-block;
   float: right;
   padding: 28px 20px;
   position: relative;
@@ -100,24 +99,24 @@ a {
   display: none;
 }
 
-.header .menu-btn:checked ~ .menu {
+.header .menu-btn:checked~.menu {
   max-height: 240px;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon {
+.header .menu-btn:checked~.menu-icon .navicon {
   background: transparent;
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:before {
+.header .menu-btn:checked~.menu-icon .navicon:before {
   transform: rotate(-45deg);
 }
 
-.header .menu-btn:checked ~ .menu-icon .navicon:after {
+.header .menu-btn:checked~.menu-icon .navicon:after {
   transform: rotate(45deg);
 }
 
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
   top: 0;
 }
 
@@ -127,41 +126,48 @@ a {
   .header li {
     float: left;
   }
+
   .header li a {
     padding: 20px 30px;
   }
+
   .header .menu {
     clear: none;
     float: right;
     max-height: none;
   }
+
   .header .menu-icon {
     display: none;
   }
 }
+
 .mention {
   color: white;
 }
+
 .google {
-	display: inline-block;
-	border-style: none;
-	position: absolute;
-	right: 1%;
-	top: 2%;
-	border-radius: 20px;
-	font-size: 13px;
-	color: black;
-	border-color: yellowgreen;
-	background-color: yellowgreen;
-	outline: none;
+  display: inline-block;
+  border-style: none;
+  position: absolute;
+  right: 1%;
+  top: 2%;
+  border-radius: 20px;
+  font-size: 13px;
+  color: black;
+  border-color: yellowgreen;
+  background-color: yellowgreen;
+  outline: none;
   font-family: monospace;
 }
+
 .profile {
   display: block;
   border-radius: 25px;
   margin-left: auto;
   margin-right: auto;
 }
+
 section {
   display: grid;
   position: relative;
@@ -173,26 +179,31 @@ section {
   grid-template-columns: repeat(3, 3fr);
   grid-template-rows: min-content;
 }
+
 .card {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20);
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.20);
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: min-content 5rem;
 }
+
 .card:hover {
   box-shadow: 0 24px 38px 3px rgba(0, 0, 255, 0.3), 0 9px 46px 8px rgba(0, 0, 255, 0.3), 0 11px 15px -7px rgba(0, 0, 255, 0.3);
 }
+
 .card:active {
   box-shadow: 0 24px 38px 3px rgba(255, 0, 0, 0.3), 0 9px 46px 8px rgba(255, 0, 0, 0.3), 0 11px 15px -7px rgba(255, 0, 0, 0.3)
 }
+
 .card img {
   width: 100%;
   height: auto;
   border-radius: 10px 10px 0 0;
 }
+
 .card h1 {
   text-align: center;
   background: var(--Gallery-Header-BG);
@@ -207,7 +218,7 @@ section {
 
 /* Breakpoint */
 @media only screen and (max-width: 700px) {
-  body > section {
+  body>section {
     width: 90%;
     height: calc(100% - 2rem);
     padding: 1rem 5%;
