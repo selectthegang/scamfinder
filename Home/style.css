@@ -215,11 +215,29 @@ a {
 }
 
 .content a {
-  text-decoration: underline;
-  color: white;
+  text-decoration: none;
+  color: cyan;
 }
 
 .content a:hover {
   color: red;
   text-decoration: underline;
 }
+
+.notice {
+  color: white;
+  font-weight: 400;
+}
+
+.notice a {
+  color: white;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+.notice a:hover {
+  color: red;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
