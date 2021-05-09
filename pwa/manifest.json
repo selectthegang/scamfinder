@@ -7,14 +7,16 @@
   "display": "standalone",
   "theme_color": "#FFA500",
   "background_color": "#FFA500",
+  "orientation": "portrait",
+  "prefer_related_application" : false,
   "icons": [
     {
       "src": "https://i.ibb.co/1T4rf3w/CC-20210406-195814.png",
-      "sizes": "512x512"
+      "sizes": "410x410"
     },
     {
       "src": "https://i.ibb.co/3T9mbVg/maskable-icon.png",
-      "sizes": "196x196",
+      "sizes": "410x410",
       "type": "image/png",
       "purpose": "any maskable"
     }
