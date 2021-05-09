@@ -83,7 +83,7 @@ app.get('*', async (req, res) => {
 });
 
 // Telegram Code
-/*const token = process.env.TELEGRAM;
+const token = process.env.TELEGRAM;
 const bot = new TelegramBot(token, {
 	polling: true
 });
@@ -139,7 +139,7 @@ bot.onText(/\/check/, async (msg, match) => {
 		}
 	}
 	bot.sendMessage(chatId, response);
-});*/
+});
 
 // Sockets
 io.on('connection', socket => {
