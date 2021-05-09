@@ -12,7 +12,13 @@
   "icons": [
     {
       "src": "https://i.ibb.co/1T4rf3w/CC-20210406-195814.png",
-      "sizes": "410x410"
+      "sizes": "410x410",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/1T4rf3w/CC-20210406-195814.png",
+      "sizes": "512x512",
+      "type": "image/png"
     },
     {
       "src": "https://i.ibb.co/3T9mbVg/maskable-icon.png",
