@@ -84,7 +84,7 @@ client.ws.on('INTERACTION_CREATE', async interaction => {
 // Regular Commands + Ready Function
 client.on('ready', async () => {
 	console.log(`discord bot online`);
-	let now = moment();
+/*	let now = moment();
 	let correcttime = now.tz('America/Chicago');
 	let time = correcttime.format('h:mma');
 	let level = `${Math.floor(Math.random() * 100 + 1)}%`;
@@ -95,9 +95,10 @@ client.on('ready', async () => {
 		.addField('time', time, true)
 		.addField('nightmare level', level, true)
 		.setFooter(`this message might contain false system information!`);
-	client.channels.cache.get(log_channel).send(info);
+	client.channels.cache.get(log_channel).send(info);*/
 	client.user.setActivity('scamfinder.tk', { type: 'LISTENING' });
 });
+
 
 client.on('message', async message => {
 	let prefix = process.env.PREFIX;

@@ -11,61 +11,91 @@ db = require('./database/mongo');
 
 // Server Stuff
 app.get('/', async (req, res) => {
-	res.sendFile('/index.html', { root: `${__dirname}/Home` });
+	res.sendFile('/index.html', {
+		root: `${__dirname}/Home`
+	});
 });
 app.get('/css', async (req, res) => {
 	let folder = req.query.folder;
 	let file = req.query.file;
-	res.sendFile(`/${file}.css`, { root: `${__dirname}/${folder}` });
+	res.sendFile(`/${file}.css`, {
+		root: `${__dirname}/${folder}`
+	});
 });
 app.get('/js', async (req, res) => {
 	let folder = req.query.folder;
 	let file = req.query.file;
 
-	res.sendFile(`/${file}.js`, { root: `${__dirname}/${folder}` });
+	res.sendFile(`/${file}.js`, {
+		root: `${__dirname}/${folder}`
+	});
 });
 app.get('/json', async (req, res) => {
 	let folder = req.query.folder;
 	let file = req.query.file;
 
-	res.sendFile(`/${file}.json`, { root: `${__dirname}/${folder}` });
+	res.sendFile(`/${file}.json`, {
+		root: `${__dirname}/${folder}`
+	});
 });
 app.get('/icon', async (req, res) => {
-	res.sendFile(`/icon.png`, { root: __dirname });
+	res.sendFile(`/icon.png`, {
+		root: __dirname
+	});
 });
 app.get('/robots.txt', async (req, res) => {
-	res.sendFile('/robots.txt', { root: __dirname });
+	res.sendFile('/robots.txt', {
+		root: __dirname
+	});
 });
 app.get('/docs', async (req, res) => {
-	res.sendFile('/index.html', { root: `${__dirname}/docs` });
+	res.sendFile('/index.html', {
+		root: `${__dirname}/docs`
+	});
 });
 app.get('/scambaiters', async (req, res) => {
-	res.sendFile('/index.html', { root: `${__dirname}/scambaiters` });
+	res.sendFile('/index.html', {
+		root: `${__dirname}/scambaiters`
+	});
 });
 app.get('/telegram', async (req, res) => {
-	res.sendFile('/index.html', { root: `${__dirname}/telegram` });
+	res.sendFile('/index.html', {
+		root: `${__dirname}/telegram`
+	});
 });
 app.get('/telegram_callback', async (req, res) => {
-	res.sendFile('/auth.html', { root: `${__dirname}/telegram` });
+	res.sendFile('/auth.html', {
+		root: `${__dirname}/telegram`
+	});
 });
 app.get('/feedback', async (req, res) => {
-	res.sendFile('/index.html', { root: `${__dirname}/Home/Feedback` });
+	res.sendFile('/index.html', {
+		root: `${__dirname}/Home/Feedback`
+	});
 });
 app.get('/ping', async (req, res) => {
 	res.send('sent ping');
 	console.log('recieved ping');
 });
 app.get('/privacy', async (req, res) => {
-	res.sendFile('/privacy.html', { root: `${__dirname}/Home/Policies` });
+	res.sendFile('/privacy.html', {
+		root: `${__dirname}/Home/Policies`
+	});
 });
 app.get('/terms', async (req, res) => {
-	res.sendFile('/terms.html', { root: `${__dirname}/Home/Policies` });
+	res.sendFile('/terms.html', {
+		root: `${__dirname}/Home/Policies`
+	});
 });
 app.get('/alexa', async (req, res) => {
-	res.sendFile('/index.html', { root: `${__dirname}/Home/Alexa` });
+	res.sendFile('/index.html', {
+		root: `${__dirname}/Home/Alexa`
+	});
 });
 app.get('/report', async (req, res) => {
-	res.sendFile('/index.html', { root: `${__dirname}/Report` });
+	res.sendFile('/index.html', {
+		root: `${__dirname}/Report`
+	});
 });
 app.get('/api/get', async (req, res) => {
 	let number = req.query.number;
@@ -78,7 +108,9 @@ app.get('/api/getrecentsearches', async (req, res) => {
 	res.json(results);
 });
 app.get('*', async (req, res) => {
-	res.sendFile('/index.html', { root: `${__dirname}/404` });
+	res.sendFile('/index.html', {
+		root: `${__dirname}/404`
+	});
 	res.status('404');
 });
 
