@@ -241,3 +241,69 @@ a {
   text-decoration: none;
 }
 
+footer {
+  display: block;
+  position: fixed;
+  text-align: center;
+  padding: 1px;
+  background-color: #f4f4f4;
+  color: black;
+  font-weight: 300;
+  bottom: 0;
+  width: 100vw;
+  border: none;
+  border-radius: none;
+}
+
+footer .creatorlink {
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+}
+
+footer a {
+  text-decoration: none;
+  border: 4px solid transparent;
+}
+
+footer a:hover {
+  text-decoration: none;
+  color: red;
+  border: 4px solid transparent;
+}
+
+footer span {
+  -webkit-animation: blink 2s infinite both;
+  animation: blink 2s infinite both;
+  color: transparent;
+  background-color: lightblue;
+  width: 8px;
+}
+
+@-webkit-keyframes blink {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
