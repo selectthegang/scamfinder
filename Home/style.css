@@ -168,7 +168,7 @@ a {
 }
 
 .phonenumber {
-  border-radius: 25px;
+  border-radius: 10px;
   border: none;
   padding: 10px;
   font-size: 18px;
@@ -181,24 +181,22 @@ a {
 ::placeholder {
   color: red;
   font-weight: bold;
-  opacity: 1;
-  text-align: center;
 }
 
 :-ms-input-placeholder {
   color: red;
-  text-align: center;
+  font-weight: bold;
 }
 
 ::-ms-input-placeholder {
   color: red;
-  text-align: center;
+  font-weight: bold;
 }
 
 .btn {
   display: block;
   margin-top: 20px;
-  border-radius: 25px;
+  border-radius: 10px;
   border: none;
   background-color: white;
   padding: 10px;
@@ -226,13 +224,14 @@ a {
 
 .notice {
   color: white;
-  font-weight: 400;
+  font-weight: 300;
+  user-select: none;
 }
 
 .notice a {
-  color: white;
-  font-weight: bolder;
-  text-decoration: underline;
+  color: cyan;
+  font-weight: 300;
+  text-decoration: none;
 }
 
 .notice a:hover {
@@ -252,7 +251,7 @@ footer {
   bottom: 0;
   width: 100vw;
   border: none;
-  border-radius: none;
+  user-select: none;
 }
 
 footer .creatorlink {
@@ -275,6 +274,8 @@ footer a:hover {
 footer span {
   -webkit-animation: blink 2s infinite both;
   animation: blink 2s infinite both;
+  user-select: none;
+  outline: none;
   color: transparent;
   background-color: lightblue;
   width: 8px;
