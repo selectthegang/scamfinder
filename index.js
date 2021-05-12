@@ -48,6 +48,12 @@ app.get('/robots.txt', async (req, res) => {
 		root: __dirname
 	});
 });
+app.get('/sitemap.rss', async (req, res) => {
+	res.sendFile('/sitemap.rss', {
+		root: __dirname
+	});
+	res.status(200);
+});
 app.get('/docs', async (req, res) => {
 	res.sendFile('/index.html', {
 		root: `${__dirname}/docs`

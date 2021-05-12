@@ -10,7 +10,8 @@ module.exports = {
 
 	async connect(uri) {
 		await mongoose.connect(
-			uri, {
+			uri,
+			{
 				useNewUrlParser: true,
 				useUnifiedTopology: true,
 				useFindAndModify: false
@@ -19,13 +20,17 @@ module.exports = {
 	},
 	search: {
 		async add(msg) {
-			const res = await searchSchema.findOneAndUpdate({
-				msg: msg
-			}, {
-				msg: msg
-			}, {
-				upsert: true
-			});
+			const res = await searchSchema.findOneAndUpdate(
+				{
+					msg: msg
+				},
+				{
+					msg: msg
+				},
+				{
+					upsert: true
+				}
+			);
 			return res;
 		},
 		async list() {
@@ -35,13 +40,17 @@ module.exports = {
 	},
 	feedback: {
 		async add(msg) {
-			const res = await feedbackSchema.findOneAndUpdate({
-				msg: msg
-			}, {
-				msg: msg
-			}, {
-				upsert: true
-			});
+			const res = await feedbackSchema.findOneAndUpdate(
+				{
+					msg: msg
+				},
+				{
+					msg: msg
+				},
+				{
+					upsert: true
+				}
+			);
 			return res;
 		},
 		async list() {
@@ -51,21 +60,25 @@ module.exports = {
 	},
 	numbers: {
 		async add(number, reports, percentage, type, verified) {
-			const res = await numberSchema.findOneAndUpdate({
-				number: number,
-				reports: reports,
-				percentage: percentage,
-				type: type,
-				verified: verified
-			}, {
-				number: number,
-				reports: reports,
-				percentage: percentage,
-				type: type,
-				verified: verified
-			}, {
-				upsert: true
-			});
+			const res = await numberSchema.findOneAndUpdate(
+				{
+					number: number,
+					reports: reports,
+					percentage: percentage,
+					type: type,
+					verified: verified
+				},
+				{
+					number: number,
+					reports: reports,
+					percentage: percentage,
+					type: type,
+					verified: verified
+				},
+				{
+					upsert: true
+				}
+			);
 			return res;
 		},
 		async remove(number) {
@@ -78,21 +91,25 @@ module.exports = {
 			const remove = await numberSchema.deleteOne({
 				number: number
 			});
-			const add = await numberSchema.findOneAndUpdate({
-				number: number,
-				reports: reports,
-				percentage: percentage,
-				type: type,
-				verified: verified
-			}, {
-				number: number,
-				reports: reports,
-				percentage: percentage,
-				type: type,
-				verified: verified
-			}, {
-				upsert: true
-			});
+			const add = await numberSchema.findOneAndUpdate(
+				{
+					number: number,
+					reports: reports,
+					percentage: percentage,
+					type: type,
+					verified: verified
+				},
+				{
+					number: number,
+					reports: reports,
+					percentage: percentage,
+					type: type,
+					verified: verified
+				},
+				{
+					upsert: true
+				}
+			);
 			return add;
 			return remove;
 		},

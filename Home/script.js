@@ -6,20 +6,20 @@ let siteresults = document.getElementById('results');
 
 /* Load Service Worker (PWA) */
 if ('serviceWorker' in navigator) {
-	window.addEventListener('load', function () {
+	window.addEventListener('load', function() {
 		navigator.serviceWorker.register('./js?folder=pwa&file=pwabuilder-sw').then(
-			function (registration) {
+			function(registration) {
 				console.log(registration.scope);
 			},
-			function (err) {
+			function(err) {
 				console.log(err);
 			}
 		);
 	});
 }
 
-/* Listen For Clicks Of Search Button */
-search.addEventListener('click', function () {
+/* Search Number When "Search" Button Is Clicked */
+search.addEventListener('click', function() {
 	if (number.value.length === 10) {
 		socket.emit('getNumber', number.value);
 	} else {
