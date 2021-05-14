@@ -11,9 +11,8 @@
   <link href="./css?folder=Home&file=style" rel="stylesheet" />
   <link href="./css?folder=Report&file=style" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="/socket.io/socket.io.js">
-
-  </script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://kit.fontawesome.com/c63ea35aec.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -33,6 +32,7 @@
   </header>
   <div class="content">
     <center><input type="number" placeholder="Enter Phone Number" class="phonenumber" id="number">
+      <div class="seperate"></div>
       <select name="type" id="type" class="type">
         <option value="Scam Category">Scam Category</option>
         <option value="Refund scam">Refund Scam</option>
@@ -48,8 +48,8 @@
         <option value="Technology Support Scam">Technology Support Scam</option>
         <option value="Other">Other</option>
       </select>
-      <h3>by clicking the "Submit" button on this page, you agree to the <a href="/terms">Terms of Service</a> and <a
-          href="/privacy">Privacy Policy</a></h3>
+      <h3 class="notice">by clicking the "Submit" button on this page, you agree to the <a href="/terms">Terms of
+          Service</a> and <a href="/privacy">Privacy Policy</a></h3>
       <button class="btn" id="btn">Submit</button>
     </center>
 
@@ -62,5 +62,18 @@
   <script src="/js?file=script&folder=Report"></script>
 
 </body>
+
+<footer>
+  <center>
+    <p>created by<a class="creatorlink">selectthegang</a><span>||</span></p>
+  </center>
+  <div class="links">
+    <a href="https://github.com/selectthegang/scamfinder"><i class="fab fa-github"></i></a>
+    <a href="https://twitch.tv/selectthegang"><i class="fab fa-twitch"></i></a>
+    <a href="https://discord.gg/fsgxRP7pe8"><i class="fab fa-discord"></i></a>
+    <a href="https://twitter.com/selectthegang"><i class="fab fa-twitter"></i></a>
+    <a href="https://t.me/scam_finder_bot"><i class="fab fa-telegram"></i></a>
+  </div>
+</footer>
 
 </html>

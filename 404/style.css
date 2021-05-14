@@ -151,16 +151,14 @@ a {
 }
 
 .home {
-  text-align: center;
-  align-content: center;
   display: block;
   margin-top: 20px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background-color: greenyellow;
+  border-radius: 10px;
   border: none;
-  color: #222;
+  background-color: white;
+  padding: 13px;
+  color: black;
   font-size: 15px;
-  font-family: monospace;
+  font-weight: 300;
   outline: none;
 }

@@ -1,8 +1,12 @@
 .type {
   outline: none;
-  border-radius: 25px;
-  padding: 5px;
+  border-radius: 10px;
   border: none;
+  padding: 15px;
   color: black;
   font-weight: bold;
+}
+
+.seperate {
+  padding: 5px;
 }
