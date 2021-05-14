@@ -6,19 +6,36 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
-.results,
-h3 {
-  color: white;
-}
-
-.results,
-a {
-  color: aqua;
-  text-decoration: none;
-}
-
 a {
   color: #000;
+}
+
+.warn {
+  display: block;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 4px solid red;
+  background-color: white;
+  padding: 13px;
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+  outline: none;
+  text-align: center;
+}
+
+.info {
+  display: block;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 4px solid orange;
+  background-color: white;
+  padding: 13px;
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+  outline: none;
+  text-align: center;
 }
 
 .header {
@@ -182,6 +199,16 @@ a {
 
 .content a:hover {
   color: red;
+  text-decoration: underline;
+}
+
+.info a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+.info a:hover {
   text-decoration: underline;
 }
 

@@ -194,10 +194,10 @@ io.on('connection', socket => {
 	socket.on('report', async (number, category) => {
 		let results = await db.numbers.get(number);
 		if (results === null) {
-			db.numbers.add(number, '1', '10', category, false);
+			db.numbers.add(number, '1', '25', category, false);
 		} else {
 			let newReports = math.add(results.reports, 1);
-			let newPercentage = math.add(results.percentage, 10);
+			let newPercentage = math.add(results.percentage, 25);
 
 			if (newPercentage > 100) {
 				db.numbers.edit(number, newReports, newPercentage, category, true);

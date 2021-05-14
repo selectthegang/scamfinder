@@ -23,13 +23,13 @@ search.addEventListener('click', function() {
 	if (number.value.length === 10) {
 		socket.emit('getNumber', number.value);
 	} else {
-		siteresults.innerHTML = `<h3>you didn't specify a vaild phone number</h3>`;
+		siteresults.innerHTML = `<div class="info">you didn't specify a vaild phone number</div>`;
 	}
 });
 
 /* Result Socket */
 socket.on('results', results => {
-	siteresults.innerHTML = `<h3 class="info">${results}</h3>`;
+	siteresults.innerHTML = `<div class="info">${results}</div>`;
 });
 
 /* Mobile Menu Function */
