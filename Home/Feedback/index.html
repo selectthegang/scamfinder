@@ -8,7 +8,6 @@
 	<link rel="icon" type="image/png" href="https://i.ibb.co/1T4rf3w/CC-20210406-195814.png">
 	<meta name="theme-color" content="#FFA500">
 	<link href="./css/?folder=Home&file=style" rel="stylesheet" />
-	<link href="./css/?folder=Home/Feedback&file=style" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="/socket.io/socket.io.js">
 
@@ -31,12 +30,16 @@
 </header>
 <div class="content">
   <center>
-  <input type="text" class="message" id="message" placeholder="What's Your Feedback?">
-  <h3>by clicking the "Send Feedback 📩" button on this page, you agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a></h3>
-  <button class="sendbtn" id="sendbtn">Send Feedback 📩</button>
+  <input type="text" class="phonenumber" id="message" placeholder="What's Your Feedback">
+  <h3 class="notice">by clicking the "Send Feedback 📩" button on this page, you agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a></h3>
+  <button class="btn" id="sendbtn">Send Feedback 📩</button>
+  
+    <div class="result" id="result"></div>
+  
   </center>
+
 </div>
-	<script src="/feedbackJS">
+	<script src="./js/?folder=Home/Feedback&file=script">
 
 	</script>
 </body>

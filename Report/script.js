@@ -4,9 +4,9 @@ let category = document.getElementById('type');
 let btn = document.getElementById('btn');
 let msg = document.getElementById('msg');
 
-btn.addEventListener('click', function () {
+btn.addEventListener('click', function() {
 	if (category.options[category.selectedIndex].text === 'Scam Category') {
-		msg.innerHTML = `<h3>you didn't specify the scam category</h3>`;
+		msg.innerHTML = `<div class="info">you didn't specify the scam category</div>`;
 	} else {
 		if (number.value.length === 10) {
 			socket.emit(
@@ -14,9 +14,9 @@ btn.addEventListener('click', function () {
 				number.value,
 				category.options[category.selectedIndex].text
 			);
-			msg.innerHTML = `<h3>thanks for reporting!</h3>`;
+			msg.innerHTML = `<div class="info">thanks for reporting!</div>`;
 		} else {
-			msg.innerHTML = `<h3>you didn't specify a vaild phone number</h3>`;
+			msg.innerHTML = `<div class="info">you didn't specify a vaild phone number</div>`;
 		}
 	}
 });

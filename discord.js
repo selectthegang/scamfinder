@@ -1,9 +1,5 @@
 // Packages/Libraries
-const {
-	Client,
-	MessageEmbed,
-	Collection
-} = require('discord.js');
+const { Client, MessageEmbed, Collection } = require('discord.js');
 const client = new Client();
 const moment = require('moment-timezone');
 const os = require('os');
@@ -105,7 +101,6 @@ client.on('ready', async () => {
 	});
 });
 
-
 client.on('message', async message => {
 	let prefix = process.env.PREFIX;
 	const args = message.content.slice(prefix.length).split(/ +/g);
@@ -113,66 +108,66 @@ client.on('message', async message => {
 	if (message.content.startsWith(`${prefix}help`)) {
 		message.channel.send(
 			new MessageEmbed()
-			.setTitle(`HELP:`)
-			.setColor(`RANDOM`)
-			.addField(
-				`${prefix}search {phone number}`,
-				`returns how much reports that phone number has recieved`,
-				true
-			)
-			.addField(`EXAMPLE PHONE NUMBER:`, `6035761811`, true)
-			.setDescription(`this bot's prefix is ${prefix}`)
+				.setTitle(`HELP:`)
+				.setColor(`RANDOM`)
+				.addField(
+					`${prefix}search {phone number}`,
+					`returns how much reports that phone number has recieved`,
+					true
+				)
+				.addField(`EXAMPLE PHONE NUMBER:`, `6035761811`, true)
+				.setDescription(`this bot's prefix is ${prefix}`)
 		);
 	}
 	if (message.content.startsWith(`${prefix}search`)) {
 		if (!args[0]) {
 			message.channel.send(
 				new MessageEmbed()
-				.setTitle(`ERROR:`)
-				.setColor('RANDOM')
-				.addField(
-					'MISSING ARGUEMENTS',
-					'THERE WAS NO PHONE NUMBER SPECIFIED...',
-					true
-				)
+					.setTitle(`ERROR:`)
+					.setColor('RANDOM')
+					.addField(
+						'MISSING ARGUEMENTS',
+						'THERE WAS NO PHONE NUMBER SPECIFIED...',
+						true
+					)
 			);
 		} else {
 			let results = await db.numbers.get(args[0]);
 			if (results === null) {
 				message.channel.send(
 					new MessageEmbed()
-					.setTitle('Results:')
-					.setDescription(
-						`the phone number you have specified has not been reported, there is a 25 percent chance of this being a scam call if this is a scam call please go to https://scamfinder.tk/report`
-					)
-					.setColor('RANDOM')
+						.setTitle('Results:')
+						.setDescription(
+							`the phone number you have specified has not been reported, there is a 25 percent chance of this being a scam call if this is a scam call please go to https://scamfinder.tk/report`
+						)
+						.setColor('RANDOM')
 				);
 			} else {
 				if (results.verified === true) {
 					message.channel.send(
 						new MessageEmbed()
-						.setTitle('Results:')
-						.setDescription(
-							`the phone number you have specified has ${
+							.setTitle('Results:')
+							.setDescription(
+								`the phone number you have specified has ${
 									results.reports
 								} reports as a ${
 									results.type
 								}, this is definitely a scam caller`
-						)
-						.setColor('RANDOM')
+							)
+							.setColor('RANDOM')
 					);
 				} else {
 					message.channel.send(
 						new MessageEmbed()
-						.setTitle('Results:')
-						.setDescription(
-							`the phone number you have specified has ${
+							.setTitle('Results:')
+							.setDescription(
+								`the phone number you have specified has ${
 									results.reports
 								} reports as a ${results.type}, there is a ${
 									results.percentage
 								} percent chance of this being a scam call`
-						)
-						.setColor('RANDOM')
+							)
+							.setColor('RANDOM')
 					);
 				}
 			}

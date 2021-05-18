@@ -32,13 +32,18 @@
     <center>
       <fieldset>
         <legend>Import NPM Package</legend>
-        <code>const scamfinder = require('scamdatabaseapi');</code>
+        <code>const scam = require('scamdatabaseapi');</code>
       </fieldset>
 
       <fieldset>
         <legend>Search Phone Numbers</legend>
-        <code>await scamfinder.check('phonenumber');</code>
+        <code>await scam.check('phonenumber');</code>
       </fieldset>
+      
+      <fieldset>
+        <legend>Show Recently Searched Phone Numbers</legend>
+        <code>await scam.getrecentsearches();</code>
+        </fieldset>
     </center>
   </div>
 </body>

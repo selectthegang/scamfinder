@@ -17,6 +17,6 @@ let image = getParameterByName('photo_url');
 
 img.src = image;
 img.alt = `${name}'s Profile Picture`;
-info.innerText = `hello ${name}, i have sent you a message on Telegram with information about ScamFinder!`;
+info.innerHTML = `<div class="info">hello ${name}, i have sent you a message on Telegram with information about ScamFinder!</div>`;
 
 socket.emit('auth', id, name);

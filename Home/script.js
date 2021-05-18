@@ -41,3 +41,22 @@ function myFunction() {
 		x.className = x.className.replace(' w3-show', '');
 	}
 }
+
+/* Modal Stuff */
+/*let modal = document.getElementById('modal');
+
+let span = document.getElementsByClassName('close')[0];
+
+setTimeout(function() {
+	modal.style.display = 'block';
+}, 2000);
+
+span.onclick = function() {
+	modal.style.display = 'none';
+};
+
+window.onclick = function(event) {
+	if (event.target == modal) {
+		modal.style.display = 'none';
+	}
+};*/

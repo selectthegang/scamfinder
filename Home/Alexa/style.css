@@ -177,17 +177,21 @@ a {
 }
 
 .alexa-btn {
-  color: black;
-  background-color: white;
+  display: block;
+  margin-top: 20px;
+  border-radius: 10px;
   border: none;
-  padding: 15px;
+  background-color: white;
+  padding: 13px;
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
   outline: none;
-  font-weight: bold;
-  border-radius: 50px;
 }
 
 .alexa-btn-image {
-  height: 10px;
+  height: 13px;
+  text-overflow: none;
   border-radius: 25px;
 }
 
