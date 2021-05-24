@@ -1,11 +1,9 @@
 // Packages/Libraries
 const { Client, MessageEmbed, Collection } = require('discord.js');
 const client = new Client();
-const moment = require('moment-timezone');
 const os = require('os');
 const math = require('mathjs');
 require('dotenv').config();
-let log_channel = process.env.logchannel;
 db = require('./database/mongo');
 
 // Slash Commands
@@ -84,18 +82,6 @@ client.ws.on('INTERACTION_CREATE', async interaction => {
 // Regular Commands + Ready Function
 client.on('ready', async () => {
 	console.log(`discord bot online`);
-	/*	let now = moment();
-		let correcttime = now.tz('America/Chicago');
-		let time = correcttime.format('h:mma');
-		let level = `${Math.floor(Math.random() * 100 + 1)}%`;
-		let info = new MessageEmbed()
-			.setTitle(`BOT STARTED!`)
-			.setColor('RANDOM')
-			.setThumbnail(client.user.displayAvatarURL())
-			.addField('time', time, true)
-			.addField('nightmare level', level, true)
-			.setFooter(`this message might contain false system information!`);
-		client.channels.cache.get(log_channel).send(info);*/
 	client.user.setActivity('scamfinder.tk', {
 		type: 'LISTENING'
 	});
@@ -115,23 +101,70 @@ client.on('message', async message => {
 					`returns how much reports that phone number has recieved`,
 					true
 				)
+				.addField(
+					`${prefix}report {phone number}`,
+					`report a phone number`,
+					true
+				)
+				.addField(
+					`${prefix}guilds`,
+					`returns a number of how much guilds/servers that this bot is in`,
+					true
+				)
+				.addField(`${prefix}ping`, `returns the latency of bot`, true)
 				.addField(`EXAMPLE PHONE NUMBER:`, `6035761811`, true)
 				.setDescription(`this bot's prefix is ${prefix}`)
 		);
 	}
-	if (message.content.startsWith(`${prefix}search`)) {
-		if (!args[0]) {
-			message.channel.send(
-				new MessageEmbed()
-					.setTitle(`ERROR:`)
-					.setColor('RANDOM')
-					.addField(
-						'MISSING ARGUEMENTS',
-						'THERE WAS NO PHONE NUMBER SPECIFIED...',
-						true
-					)
-			);
+	if (message.content.startsWith(`${prefix}guilds`)) {
+		let msg = new MessageEmbed()
+			.setTitle(`this bot is in ${client.guilds.cache.size} servers/guilds`)
+			.setColor('RANDOM');
+
+		message.channel.send(msg);
+	}
+	if (message.content.startsWith(`${prefix}ping`)) {
+		let msg = new MessageEmbed()
+			.setTitle('PONG!')
+			.setColor('RANDOM')
+			.addField(
+				`🏓 Latency`,
+				`${Date.now() - message.createdTimestamp}ms`,
+				true
+			)
+			.addField(`API Latency`, `${Math.round(client.ws.ping)}ms`);
+
+		message.channel.send(msg);
+	}
+	if (message.content.startsWith(`${prefix}report`)) {
+		let results = await db.numbers.get(args[0]);
+		if (args[0].length === 10) {
+			if (results === null) {
+				db.numbers.add(value.value, '1', '10', 'Other', false);
+			} else {
+				let newReports = math.add(results.reports, 1);
+				let newPercentage = math.add(results.percentage, 10);
+
+				if (newPercentage > 100) {
+					db.numbers.edit(args[0], newReports, newPercentage, 'Other', true);
+				} else {
+					db.numbers.edit(
+						args[0],
+						newReports,
+						newPercentage,
+						'Other',
+						results.verified
+					);
+				}
+			}
+			response = `thanks for reporting!`;
 		} else {
+			response = `you didn't specify a valid phone number!`;
+		}
+		message.channel.send(response);
+	}
+	if (message.content.startsWith(`${prefix}search`)) {
+		if (args[0].length === 10) {
 			let results = await db.numbers.get(args[0]);
 			if (results === null) {
 				message.channel.send(
@@ -171,6 +204,17 @@ client.on('message', async message => {
 					);
 				}
 			}
+		} else {
+			message.channel.send(
+				new MessageEmbed()
+					.setTitle(`ERROR:`)
+					.setColor('RANDOM')
+					.addField(
+						'MISSING ARGUEMENTS',
+						'THERE WAS NO PHONE NUMBER SPECIFIED...',
+						true
+					)
+			);
 		}
 	}
 });
