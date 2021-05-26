@@ -43,8 +43,20 @@ client.ws.on('INTERACTION_CREATE', async interaction => {
 			response = `you didn't specify a valid phone number!`;
 		}
 	}
+	if (interaction.data.name === 'telegram') {
+		response = `https://scamfinder.tk/telegram`;
+	}
+	if (interaction.data.name === 'discord') {
+		response = `https://discord.com/api/oauth2/authorize?client_id=845490678871228426&permissions=0&scope=applications.commands%20bot`;
+	}
+	if (interaction.data.name === 'vscode') {
+		response = `https://marketplace.visualstudio.com/items?itemName=selectthegang.scamfinder`;
+	}
 	if (interaction.data.name === 'website') {
 		response = `https://scamfinder.tk/`;
+	}
+	if (interaction.data.name === 'docs') {
+		response = `https://scamfinder.tk/docs`;
 	}
 	if (interaction.data.name === 'check') {
 		let value = Object.values(interaction.data.options)[0];

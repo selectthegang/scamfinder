@@ -146,6 +146,37 @@ bot.onText(/\/start/, async (msg, match) => {
 	bot.sendMessage(chatId, `how may i help you, "/" for available commands!`);
 });
 
+bot.onText(/\/report/, async (msg, match) => {
+	const chatId = msg.chat.id;
+	const number = match.input.split(' ')[1];
+	let results = await db.numbers.get(number);
+	if (number === undefined) {
+		response = `you didn't specify a valid phone number!`;
+	} else {
+		if (number.length === 10) {
+			if (results === null) {
+				db.numbers.add(number, '1', '10', 'Other', false);
+			} else {
+				let newReports = math.add(results.reports, 1);
+				let newPercentage = math.add(results.percentage, 10);
+
+				if (newPercentage > 100) {
+					db.numbers.edit(number, newReports, newPercentage, 'Other', true);
+				} else {
+					db.numbers.edit(
+						number,
+						newReports,
+						newPercentage,
+						'Other',
+						results.verified
+					);
+				}
+			}
+		}
+	}
+	bot.sendMessage(chatId, response);
+});
+
 bot.onText(/\/check/, async (msg, match) => {
 	const chatId = msg.chat.id;
 	const number = match.input.split(' ')[1];
