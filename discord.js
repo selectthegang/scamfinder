@@ -1,7 +1,14 @@
 // Packages/Libraries
-const { Client, MessageEmbed, Collection } = require('discord.js');
+const {
+	Client,
+	MessageEmbed,
+	Collection
+} = require('discord.js');
 const client = new Client();
-const { MessageButton } = require('discord-buttons');
+const {
+	MessageButton,
+	MessageActionRow
+} = require('discord-buttons');
 require('discord-buttons')(client);
 const os = require('os');
 const math = require('mathjs');
@@ -116,7 +123,22 @@ client.on('clickButton', async button => {
 	}
 });
 
+
 client.on('message', async message => {
+	let deletemessage = new MessageButton()
+		.setLabel('Delete Message')
+		.setStyle('blurple')
+		.setID('delete');
+
+	let website = new MessageButton()
+		.setLabel("ScamFinder Website")
+		.setStyle("url")
+		.setURL("https://scamfinder.tk/");
+
+	const btn = new MessageActionRow()
+		.addComponent(deletemessage)
+		.addComponent(website);
+
 	let prefix = process.env.PREFIX;
 	const args = message.content.slice(prefix.length).split(/ +/g);
 	const command = args.shift().toLowerCase();
@@ -140,10 +162,6 @@ client.on('message', async message => {
 			.addField(`EXAMPLE PHONE NUMBER:`, `6035761811`, true)
 			.setDescription(`this bot's prefix is ${prefix}`);
 
-		let btn = new MessageButton()
-			.setLabel('Delete Message')
-			.setStyle('blurple')
-			.setID('delete');
 
 		message.channel.send({
 			component: btn,
@@ -154,11 +172,6 @@ client.on('message', async message => {
 		let msg = new MessageEmbed()
 			.setTitle(`this bot is in ${client.guilds.cache.size} servers/guilds`)
 			.setColor('RANDOM');
-
-		let btn = new MessageButton()
-			.setLabel('Delete Message')
-			.setStyle('blurple')
-			.setID('delete');
 
 		message.channel.send({
 			component: btn,
@@ -175,11 +188,6 @@ client.on('message', async message => {
 				true
 			)
 			.addField(`API Latency`, `${Math.round(client.ws.ping)}ms`);
-
-		let btn = new MessageButton()
-			.setLabel('Delete Message')
-			.setStyle('blurple')
-			.setID('delete');
 
 		message.channel.send({
 			component: btn,
@@ -212,11 +220,6 @@ client.on('message', async message => {
 			response = `you didn't specify a valid phone number!`;
 		}
 
-		let btn = new MessageButton()
-			.setLabel('Delete Message')
-			.setStyle('blurple')
-			.setID('delete');
-
 		message.channel.send(response, {
 			component: btn
 		});
@@ -234,11 +237,6 @@ client.on('message', async message => {
 					)
 					.setColor('RANDOM');
 
-				let btn = new MessageButton()
-					.setLabel('Delete Message')
-					.setStyle('blurple')
-					.setID('delete');
-
 				message.channel.send({
 					component: btn,
 					embed: msg
@@ -253,12 +251,6 @@ client.on('message', async message => {
 							} reports as a ${results.type}, this is definitely a scam caller`
 						)
 						.setColor('RANDOM');
-
-					let btn = new MessageButton()
-						.setLabel('Delete Message')
-						.setStyle('blurple')
-						.setID('delete');
-
 					message.channel.send({
 						component: btn,
 						embed: msg
@@ -275,11 +267,6 @@ client.on('message', async message => {
 						)
 						.setColor('RANDOM');
 
-					let btn = new MessageButton()
-						.setLabel('Delete Message')
-						.setStyle('blurple')
-						.setID('delete');
-
 					message.channel.send({
 						component: btn,
 						embed: msg
@@ -295,11 +282,6 @@ client.on('message', async message => {
 					'THERE WAS NO PHONE NUMBER SPECIFIED...',
 					true
 				);
-
-			let btn = new MessageButton()
-				.setLabel('Delete Message')
-				.setStyle('blurple')
-				.setID('delete');
 
 			message.channel.send({
 				component: btn,
