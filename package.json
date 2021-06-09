@@ -4,6 +4,7 @@
   "description": "ScamFinder is a new and easier way to detect if a scammer is calling you, just enter the phone number and see if there's any reports from anyone of our VERY small community",
   "main": "index.js",
   "dependencies": {
+    "discord-buttons": "^3.2.1",
     "discord.js": "^12.5.3",
     "dotenv": "^9.0.0",
     "express": "^4.17.1",
